@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import reportWebVitals from './reportWebVitals';
-import { ProductCreatorScreen } from './features/managerProducts/screens';
+
+import { ProductCategoryScreen } from './features/managerProducts/screens/ProductCategory';
+
 ReactDOM.render(
 	<React.StrictMode>
-		<CssBaseline />
-		<ProductCreatorScreen />
+		<CssBaseline/>
+		<ProductCategoryScreen />
 	</React.StrictMode>,
 	document.getElementById('root')
 );
