@@ -5,7 +5,12 @@ const title = "Categorias Populares"
 const categoryItemList: CategoryItem[] = [
 	{ title: "Informatica", onPress: () => { console.log("Foi pressionado") } },
 	{ title: "Eletroeletronica", onPress: () => { console.log("Foi pressionado item2") } },
-
+	{ title: "Mecanico", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
 ]
 export const ProductCategoryScreen = () => {
 
