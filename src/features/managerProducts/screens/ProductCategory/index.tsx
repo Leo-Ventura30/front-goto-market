@@ -9,13 +9,13 @@ const typeCategoryList: TypeCategoryProps[] = [
 ]
 const categoryItemList: CategoryItemProps[] = [
 	{ title: "Informatica", onPress: () => { console.log("Foi pressionado") } },
-	{ title: "Eletroeletronica", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Estética", onPress: () => { console.log("Foi pressionado item2") } },
 	{ title: "Mecanico", onPress: () => { console.log("Foi pressionado item2") } },
 	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
-	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
-	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
-	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
-	{ title: "Desenvolvedor full-stack", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Trade de elite", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Hamburgueria", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pet shop", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias", onPress: () => { console.log("Foi pressionado item2") } },
 ]
 export const ProductCategoryScreen = () => {
 

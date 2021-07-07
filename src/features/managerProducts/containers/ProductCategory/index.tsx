@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { Grid, Typography, Chip, Avatar, Paper } from '@material-ui/core';
 import DoneIcon from '@material-ui/icons/Done';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 interface CategoryListProps{
@@ -40,7 +39,9 @@ const PaperProduct = styled(Paper)`
  height:16vh;
  border: 1px solid #eee;
  margin:2px;
-` 
+ flex-wrap: wrap;
+ padding:10 %;
+ `
 export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:CategoryListProps) =>
   <PageWrapper container justify="center">
     <GridCategory container justify="flex-start">
@@ -48,27 +49,32 @@ export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:Cat
             {title}:
         </Typography>
         {typeCategoryList.map((typeCategory => (
-            <Chip
+          <Chip
+              key={typeCategory.title}
               size="small"
               avatar={<Avatar alt={typeCategory.title}>{typeCategory.title[0]}</Avatar>}
               label={typeCategory.title}
               clickable
+              onDelete={typeCategory.onPress}
               deleteIcon={<DoneIcon />}
             />
         )))}
+      </GridCategory>
       
-        <GridProducts container justify="flex-start" alignItems="center" spacing={0}>
+        <GridProducts container justify="center" spacing={0}>
         {categoryItemList.map((categoryItem) => (
-          <Grid item justify="center" key={categoryItem.title}>
+          <Grid item key={categoryItem.title}>
             <PaperProduct elevation={2} onClick={categoryItem.onPress}>
-              <AddCircleIcon/>
-                {categoryItem.title}
-              <Avatar alt="Produtos">P</Avatar>
+                {/* <Avatar alt="Produtos">{categoryItem.title[0]}</Avatar> */}
+
+                <Typography variant="subtitle2" gutterBottom>
+                  {categoryItem.title}
+                </Typography>
+                <Avatar alt="Produtos">P</Avatar>
             </PaperProduct>
           </Grid>
             ))}
         </GridProducts>
-      </GridCategory>
   </PageWrapper>
 
   
