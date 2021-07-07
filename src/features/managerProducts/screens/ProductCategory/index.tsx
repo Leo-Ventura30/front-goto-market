@@ -5,7 +5,9 @@ const title = "Categorias Populares"
 const typeCategoryList: TypeCategoryProps[] = [
 	{ title: "Produtos", onPress:()=>{console.log("disabled")} },
 	{ title: "Servicos", onPress:()=>{console.log("disabled")} },
-	{ title: "Cursos", onPress:()=>{console.log("disabled")} },
+	{ title: "Cursos", onPress: () => { console.log("disabled") } },
+	{ title: "Delivery", onPress: () => { console.log("disabled") } },
+	{ title: "Mercados", onPress:()=>{console.log("disabled")} },	
 ]
 const categoryItemList: CategoryItemProps[] = [
 	{ title: "Informatica", onPress: () => { console.log("Foi pressionado") } },
@@ -16,6 +18,16 @@ const categoryItemList: CategoryItemProps[] = [
 	{ title: "Hamburgueria", onPress: () => { console.log("Foi pressionado item2") } },
 	{ title: "Pet shop", onPress: () => { console.log("Foi pressionado item2") } },
 	{ title: "Pizzarias", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias2", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias3", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias4", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias5", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias6", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias7", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias8", onPress: () => { console.log("Foi pressionado item2") } },
+	{ title: "Pizzarias9", onPress: () => { console.log("Foi pressionado item2") } },
+
+
 ]
 export const ProductCategoryScreen = () => {
 

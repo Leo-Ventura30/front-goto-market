@@ -59,9 +59,8 @@ export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:Cat
               deleteIcon={<DoneIcon />}
             />
         )))}
-      </GridCategory>
       
-        <GridProducts container justify="center" spacing={0}>
+      <GridProducts container justify="center" spacing={0}>
         {categoryItemList.map((categoryItem) => (
           <Grid item key={categoryItem.title}>
             <PaperProduct elevation={2} onClick={categoryItem.onPress}>
@@ -75,6 +74,7 @@ export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:Cat
           </Grid>
             ))}
         </GridProducts>
+      </GridCategory>
   </PageWrapper>
 
   
