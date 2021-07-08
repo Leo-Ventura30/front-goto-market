@@ -11,7 +11,6 @@ import {
 	CardHeader,
 	IconButton,
 	CardActions,
-	CardMedia,
 	Box
 } from '@material-ui/core';
 
@@ -19,7 +18,6 @@ import Rating from '@material-ui/lab/Rating';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import DoneIcon from '@material-ui/icons/Done';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 
@@ -43,10 +41,11 @@ export interface CategoryItemProps {
 
 const PageWrapper = styled(Grid)`
 	width: 100%;
+  background:#eee;
 `;
 const GridCategory = styled(Grid)`
-	margin: 5px;
 	width: 70%;
+  background:#fff;
 `;
 const GridProducts = styled(Grid)`
 	margin: 5px;
@@ -62,6 +61,8 @@ const PaperProduct = styled(Paper)`
 `;
 const CardProduct = styled(Card)`
 	padding: 8px;
+  max-width:35vh;
+  margin:5px;
 `;
 export const ProductsCategory = ({
 	title,
@@ -88,10 +89,9 @@ export const ProductsCategory = ({
 					deleteIcon={<DoneIcon />}
 				/>
 			))}
-
-			<GridProducts container justify="center" spacing={0}>
+      <GridProducts container justify="center">
 				{categoryItemList.map((categoryItem) => (
-					<Grid item key={categoryItem.title}>
+					<Grid item justify="center" key={categoryItem.title}>
 						<PaperProduct
 							elevation={2}
 							onClick={categoryItem.onPress}
@@ -105,29 +105,25 @@ export const ProductsCategory = ({
 						</PaperProduct>
 					</Grid>
 				))}
-			</GridProducts>
-		</GridCategory>
-		<Grid container justify="center" spacing={0}>
-			<CardProduct elevation={5}>
-				<CardHeader
+      </GridProducts>
+      <Typography variant="h6" gutterBottom>Melhores ofertas pra você!</Typography>
+      <Grid container justify="center" spacing={0}>
+      {[1, 2, 3,4].map(value => (
+        <CardProduct elevation={5}>
+        IMG
+          <CardHeader
 					avatar={<Avatar aria-label="recipe">R</Avatar>}
-					action={
-						<IconButton aria-label="settings">
-							<MoreVertIcon />
-						</IconButton>
-					}
-					title="Shrimp and Chorizo Paella"
-					subheader="September 14, 2016"
+            title="Restaurante Coco bambu"
+				    subheader="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ipsum lacus. Pellentesque tortor odio, semper semper quam consectetur, pharetra aliquet justo."
 				/>
-				<Box component="fieldset" mb={3} borderColor="transparent">
-					<Typography component="legend">
-						Custom empty icon
-					</Typography>
+        <Box component="fieldset" mb={0} borderColor="transparent">
+          <Typography component="legend">Avaliações</Typography>
 					<Rating
 						name="customized-empty"
-						defaultValue={2}
-						precision={0.5}
-						emptyIcon={<StarBorderIcon fontSize="inherit" />}
+						defaultValue={4.5}
+						precision={0.1}
+            emptyIcon={<StarBorderIcon fontSize="inherit" />}
+            disabled
 					/>
 				</Box>
 				<CardActions disableSpacing>
@@ -139,6 +135,12 @@ export const ProductsCategory = ({
 					</IconButton>
 				</CardActions>
 			</CardProduct>
+      ))}
+      
 		</Grid>
+			
+    </GridCategory>
+    
+    
 	</PageWrapper>
 );
