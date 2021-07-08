@@ -8,7 +8,7 @@ import { ProductCategoryScreen } from './features/managerProducts/screens/Produc
 
 ReactDOM.render(
 	<React.StrictMode>
-		<CssBaseline/>
+		<CssBaseline />
 		<ProductCategoryScreen />
 	</React.StrictMode>,
 	document.getElementById('root')
