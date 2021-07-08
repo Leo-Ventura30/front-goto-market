@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Typography, Chip, Avatar, Paper } from '@material-ui/core';
+import { Grid, Typography, Chip, Avatar, Paper, Card, CardHeader, IconButton, CardActions, CardMedia } from '@material-ui/core';
 import DoneIcon from '@material-ui/icons/Done';
-
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 
 interface CategoryListProps{
   typeCategoryList: TypeCategoryProps[]
@@ -35,12 +37,12 @@ const GridProducts = styled(Grid)`
   width:100%;
 `
 const PaperProduct = styled(Paper)`
- width:16vh;
- height:16vh;
- border: 1px solid #eee;
- margin:2px;
- flex-wrap: wrap;
- padding:10 %;
+  width:16vh;
+  height:16vh;
+  border: 1px solid #eee;
+  margin:2px;
+  flex-wrap: wrap;
+  padding:10 %;
  `
 export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:CategoryListProps) =>
   <PageWrapper container justify="center">
@@ -74,7 +76,39 @@ export const ProductsCategory = ({title, categoryItemList, typeCategoryList}:Cat
           </Grid>
             ))}
         </GridProducts>
-      </GridCategory>
+    </GridCategory>
+    <Grid container justify="center" spacing={0}>
+      <Card>
+        <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" >
+            R
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+          title="Shrimp and Chorizo Paella"
+          subheader="September 14, 2016"
+        />
+        <CardMedia
+          image="./businessman-96x96-23386"
+          title="Paella dish"
+        />
+        
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        </CardActions>
+
+      </Card>
+    </Grid>
   </PageWrapper>
 
   
