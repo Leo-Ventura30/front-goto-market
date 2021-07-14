@@ -36,6 +36,18 @@ const typeCategoryList: TypeCategoryProps[] = [
 		onPress: () => {
 			console.log('disabled');
 		}
+	},
+	{
+		title: 'Veículos',
+		onPress: () => {
+			console.log('disabled');
+		}
+	},
+	{
+		title: 'Imóveis',
+		onPress: () => {
+			console.log('disabled');
+		}
 	}
 ];
 const categoryItemList: CategoryItemProps[] = [
@@ -130,7 +142,7 @@ const categoryItemList: CategoryItemProps[] = [
 		}
 	},
 	{
-		title: 'Pizzarias9',
+		title: 'Pizzariaswa9',
 		onPress: () => {
 			console.log('Foi pressionado item2');
 		}

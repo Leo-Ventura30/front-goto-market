@@ -40,56 +40,58 @@ export interface CategoryItemProps {
 }
 
 const PageWrapper = styled(Grid)`
-	width: 100%;
-  background:#eee;
+	width: 100vw;
 `;
-const GridCategory = styled(Grid)`
-	width: 70%;
-  background:#fff;
-`;
-const GridProducts = styled(Grid)`
-	margin: 5px;
-	width: 100%;
+const PageGrid = styled(Grid)`
+	width: 80vw;
+  	background:#eee;
+	padding: 0 4vw;  
 `;
 const PaperProduct = styled(Paper)`
-	width: 16vh;
-	height: 16vh;
-	border: 1px solid #eee;
-	margin: 2px;
-	flex-wrap: wrap;
-	padding: 10 %;
+	max-width: 8vw;
+	width: 8vw;
+	height: 8vw;
 `;
 const CardProduct = styled(Card)`
-	padding: 8px;
-  max-width:35vh;
-  margin:5px;
+	padding: 1vw;
+	max-width:18vw;
 `;
+const TitleTypography = styled(Typography)`
+	// max-width:80vh;
+`
+const CategoryChip = styled(Chip)`
+	margin:0.2vw;
+	// max-width:25vh;
+`
 export const ProductsCategory = ({
 	title,
 	categoryItemList,
 	typeCategoryList
 }: CategoryListProps) => (
 	<PageWrapper container justify="center">
-		<GridCategory container justify="flex-start">
-			<Typography variant="h6" gutterBottom>
+		<PageGrid container justify="center">
+			<TitleTypography variant="h6" gutterBottom>
 				{title}:
-			</Typography>
-			{typeCategoryList.map((typeCategory) => (
-				<Chip
-					key={typeCategory.title}
-					size="small"
-					avatar={
-						<Avatar alt={typeCategory.title}>
-							{typeCategory.title[0]}
-						</Avatar>
-					}
-					label={typeCategory.title}
-					clickable
-					onDelete={typeCategory.onPress}
-					deleteIcon={<DoneIcon />}
-				/>
-			))}
-      <GridProducts container justify="center">
+			</TitleTypography>
+			<Grid container justify="center">
+				{typeCategoryList.map((typeCategory) => (
+					<Grid item justify="center" key={typeCategory.title}>
+						<CategoryChip
+							size="small"
+							avatar={
+								<Avatar alt={typeCategory.title}>
+									{typeCategory.title[0]}
+								</Avatar>
+							}
+							label={typeCategory.title}
+							clickable
+							onDelete={typeCategory.onPress}
+							deleteIcon={<DoneIcon />}
+						/>
+					</Grid>
+				))}
+			</Grid>
+      <Grid container justify="flex-start">
 				{categoryItemList.map((categoryItem) => (
 					<Grid item justify="center" key={categoryItem.title}>
 						<PaperProduct
@@ -105,16 +107,16 @@ export const ProductsCategory = ({
 						</PaperProduct>
 					</Grid>
 				))}
-      </GridProducts>
-      <Typography variant="h6" gutterBottom>Melhores ofertas pra você!</Typography>
-      <Grid container justify="center" spacing={0}>
+      </Grid>
+      <TitleTypography variant="h6" gutterBottom>Melhores ofertas pra você!</TitleTypography>
+      <Grid container justify="flex-start" spacing={0}>
       {[1, 2, 3,4].map(value => (
         <CardProduct elevation={5}>
         IMG
           <CardHeader
-					avatar={<Avatar aria-label="recipe">R</Avatar>}
-            title="Restaurante Coco bambu"
-				    subheader="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ipsum lacus. Pellentesque tortor odio, semper semper quam consectetur, pharetra aliquet justo."
+					// avatar={<Avatar aria-label="recipe">R</Avatar>}
+            		title="Restaurante Coco bambu"
+				    subheader="Os Restaurantes Coco Bambu possuem aplo cardapio venham conhecer!"
 				/>
         <Box component="fieldset" mb={0} borderColor="transparent">
           <Typography component="legend">Avaliações</Typography>
@@ -139,8 +141,7 @@ export const ProductsCategory = ({
       
 		</Grid>
 			
-    </GridCategory>
-    
+    </PageGrid>
     
 	</PageWrapper>
 );
